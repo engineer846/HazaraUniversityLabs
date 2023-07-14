@@ -16,9 +16,11 @@ public class BallController : MonoBehaviour
             SpawnPoint = GameManager.instance.SpawnPoint;
             GameObject BallPrefab = GameManager.instance.Balls[Random.Range(0,3)];
             GameObject Go = Instantiate(BallPrefab, SpawnPoint); Go.transform.localPosition = new Vector3(0, 0, 0);
+            GameManager.instance.BallsList.Add(Go);
             //Go.name = "Ball";
             if(Go.GetComponent<BallController>().ColorIndex == 3)
             {
+                GameManager.instance.BallsList.Remove(Go);
                 Destroy(Go.gameObject);
             }
             //this.GetComponent<BallController>().enabled = false;
@@ -26,6 +28,7 @@ public class BallController : MonoBehaviour
 
         if (Other.gameObject.tag.Contains("Ground"))
         {
+            GameManager.instance.BallsList.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
        
