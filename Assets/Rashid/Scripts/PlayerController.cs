@@ -5,6 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float Speed;
+    public float RotationSpeed = 200f;
+
+    [Header("Shooting Area")]
+    public GameObject BulletPrefab;
+    public Transform BulletInitPos;
+    public float fireRate = 0.1f;
+    private float lastShot = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,31 +21,33 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        //{
-        //    // Move the object Right along its z axis 1 unit/second.
-        //    transform.Translate(Vector3.right * Speed * Time.deltaTime);
-        //}
-        //if (Input.GetKey(KeyCode.D))
-        //{
-
-        //    transform.Translate(-Vector3.right * Speed * Time.deltaTime);
-        //}
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    // Move the object forward along its z axis 1 unit/second.
-        //    transform.Translate(Vector3.forward * Speed * Time.deltaTime);
-        //}
-        //if (Input.GetKey(KeyCode.S))
-        //{
-
-        //    transform.Translate(Vector3.back * Speed * Time.deltaTime);
-        //}
-
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontalInput, 0, verticalInput) * Speed * Time.deltaTime;
-        transform.Translate(movement);
+        Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
+        float magnitude = moveDirection.magnitude;
+        if (moveDirection != Vector3.zero)
+        {
+            Quaternion toRotate = Quaternion.LookRotation(moveDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotate, RotationSpeed * Time.deltaTime);
+        }
+
+        transform.Translate(transform.forward * magnitude * Speed * Time.deltaTime, Space.World);
+
+
+        if (Input.GetMouseButton(0))
+        {
+            //Fire
+            FireBullet();
+        }
+    }
+
+    void FireBullet()
+    {
+        if (Time.time > fireRate + lastShot)
+        {
+            Instantiate(BulletPrefab, BulletInitPos.position, BulletInitPos.rotation);
+            lastShot = Time.time;
+        }
     }
 }
