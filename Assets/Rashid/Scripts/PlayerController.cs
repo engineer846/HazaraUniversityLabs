@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(BulletPrefab, BulletInitPos.position, BulletInitPos.rotation);
             lastShot = Time.time;
+            EventManager.myEventCaller();
         }
     }
 }

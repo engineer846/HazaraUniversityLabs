@@ -18,5 +18,24 @@ public class Bullet : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        //if (Other.collider.tag.Contains("Opponent"))
+        //{
+        //    Destroy(Other.collider.gameObject);
+        //    Destroy(this.gameObject);
+        //}
+
+        HealthController health = Other.collider.GetComponent<HealthController>();
+
+        if (health != null)
+        {
+            //damage
+            if(health.HitEffect != null)
+            {
+                Instantiate(health.HitEffect, transform.position, Quaternion.identity);
+            }
+            health.Damage();
+            Destroy(this.gameObject);
+        }
+
     }
 }
