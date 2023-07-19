@@ -32,5 +32,12 @@ public class RayCaster : MonoBehaviour
             Debug.Log("Did not Hit");
         }
     }
-   
+
+
+    //for reference only
+    //Vector3 temp;
+    //temp = transform.position;
+    //    Mathf.Clamp(temp.x, 0, 10);
+    //    Mathf.Clamp(temp.z, 0, 10);
+    //    transform.position = temp;
 }

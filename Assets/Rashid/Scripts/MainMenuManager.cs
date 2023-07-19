@@ -28,17 +28,17 @@ public class MainMenuManager : MonoBehaviour
 
     private void Update()
     {
-        if (isGameOver)
-            return;
-        score += Time.deltaTime;
-        Debug.Log(score);
+        //if (isGameOver)
+        //    return;
+        //score += Time.deltaTime;
+        //Debug.Log(score);
 
-        if(score > PlayerPrefs.GetInt("HighScore") + 1)
-        {
-            PlayerPrefs.SetInt("HighScore", (int)score);
-            HighScoreText.text = "High Score : " + PlayerPrefs.GetInt("HighScore");
-            isGameOver = true;
-        }
+        //if(score > PlayerPrefs.GetInt("HighScore") + 1)
+        //{
+        //    PlayerPrefs.SetInt("HighScore", (int)score);
+        //    HighScoreText.text = "High Score : " + PlayerPrefs.GetInt("HighScore");
+        //    isGameOver = true;
+        //}
     }
 
     public void ResetPrefs()
