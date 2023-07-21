@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Hurdle
   - Opponent
+  - Collectable
   layers:
   - Default
   - TransparentFX

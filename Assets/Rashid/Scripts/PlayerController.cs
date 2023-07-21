@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             //Fire
-            FireBullet();
+            //FireBullet();
         }
     }
 
