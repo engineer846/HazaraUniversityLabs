@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public SimpleTouchController JoyStick;
+
     public float Speed;
     public float RotationSpeed = 200f;
 
@@ -37,8 +39,12 @@ public class PlayerController : MonoBehaviour
 
         //transform.Translate(transform.forward * magnitude * Speed * Time.deltaTime, Space.World);
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        //float horizontalInput = Input.GetAxis("Horizontal");
+        //float verticalInput = Input.GetAxis("Vertical");
+
+        float horizontalInput = JoyStick.GetTouchPosition.x;
+        float verticalInput = JoyStick.GetTouchPosition.y;
+
 
         Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
         float magnitude = moveDirection.magnitude;

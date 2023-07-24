@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5271110404550636373}
   - component: {fileID: 5271110404550636372}
   m_Layer: 0
-  m_Name: Collectable
+  m_Name: Collectable 1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,10 +108,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0843209796d8b44e8edbc2f06270cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Materials:
-  - {fileID: 2100000, guid: 52cbdc0f28f85694b99123fcbb5a9e7c, type: 2}
-  - {fileID: 2100000, guid: 1afed339eafa5f64cb0019217cb0bfc0, type: 2}
-  - {fileID: 2100000, guid: 89f710a1e3dc3d349bc8f55c65f8a86a, type: 2}
-  - {fileID: 2100000, guid: 54af923e865cdd84d820b997cbf43ee0, type: 2}
-  - {fileID: 2100000, guid: 0dfdbd1958498784ca58efa8835e022f, type: 2}
-  opponentProps: {fileID: 11400000, guid: 5fcb7c90164dd3f47a607966a2b05dad, type: 2}
+  opponentProps: {fileID: 11400000, guid: bbac4ab15782b4c419f49b23f80444d5, type: 2}

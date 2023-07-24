@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb96fac4d54ddc428e95dcd15179fa3, type: 3}
+  m_Name: RedOpponent 1
+  m_EditorClassIdentifier: 
+  ColorIndex: 1
+  Materials:
+  - {fileID: 2100000, guid: 52cbdc0f28f85694b99123fcbb5a9e7c, type: 2}
+  - {fileID: 2100000, guid: 1afed339eafa5f64cb0019217cb0bfc0, type: 2}
+  - {fileID: 2100000, guid: 89f710a1e3dc3d349bc8f55c65f8a86a, type: 2}
+  - {fileID: 2100000, guid: 54af923e865cdd84d820b997cbf43ee0, type: 2}
+  - {fileID: 2100000, guid: 0dfdbd1958498784ca58efa8835e022f, type: 2}
